@@ -1,6 +1,6 @@
 FROM amazonlinux:latest
 
-LABEL maintainer="markus hornickel" description="docker buid image for CI-Pipelines" version="latest"
+LABEL maintainer="m4rkus@engineers4cloud" description="docker buid image for CI-Pipelines" version="latest"
 
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/aws/bin:/root/bin"
 ENV TZ="etc/localtime"
