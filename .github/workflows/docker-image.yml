@@ -25,9 +25,9 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
         
     - name: Build and push image
-        uses: docker/build-push-action@v3
-        with:
-          platforms: linux/amd64
-          tags: engineers4cloud/docker:latest
-          push: true
+      uses: docker/build-push-action@v3
+      with:
+        platforms: linux/amd64
+        tags: engineers4cloud/docker:latest
+        push: true
     
