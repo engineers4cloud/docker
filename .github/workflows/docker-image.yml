@@ -1,15 +1,16 @@
+---
 name: Docker Image CI
-
 on:
+  schedule: 
+     - cron: "0 1 * * *" 
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
