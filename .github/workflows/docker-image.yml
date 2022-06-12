@@ -25,6 +25,8 @@ jobs:
     - name: Build and push image
       uses: docker/build-push-action@v3
       with:
+        context: .
+        file: ./amd64/Dockerfile
         platforms: linux/amd64
         tags: engineers4cloud/docker:latest
         push: true
