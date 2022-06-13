@@ -29,14 +29,5 @@ jobs:
         file: ./amd64/Dockerfile
         platforms: linux/amd64
         tags: engineers4cloud/docker:latest
-        push: true
-        
-    - name: Build and push image arm64
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        file: ./arm64/Dockerfile
-        platforms: linux/arm64
-        tags: engineers4cloud/docker:latest
-        push: true    
+        push: true  
     
