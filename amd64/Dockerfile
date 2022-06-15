@@ -16,9 +16,6 @@ RUN yum update -y \
 aws \
 /usr/local/aws-cli/v2/*/dist/aws_completer \
 /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
-/usr/local/aws-cli/v2/*/dist/awscli/examples \
-&& git clone https://github.com/chainguard-dev/apko.git
-WORKDIR /apko
-RUN ./hack/make-devenv.sh
+/usr/local/aws-cli/v2/*/dist/awscli/examples
 
 CMD ["/bin/bash"]
