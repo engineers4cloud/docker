@@ -17,6 +17,9 @@ aws \
 /usr/local/aws-cli/v2/*/dist/aws_completer \
 /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
 /usr/local/aws-cli/v2/*/dist/awscli/examples \
-&& git clone https://github.com/chainguard-dev/apko.git
+&& git clone https://github.com/chainguard-dev/apko.git \
+&& ./hack/make-devenv.sh \
+&& cd /apko \
+&& make install
 
 CMD ["/bin/bash"]
