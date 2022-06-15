@@ -18,6 +18,6 @@ aws \
 /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
 /usr/local/aws-cli/v2/*/dist/awscli/examples \
 && git clone https://github.com/chainguard-dev/apko.git \
-&& cd /apko/hack && ls -la
+&& ./apko/hack/make-devenv.sh
 
 CMD ["/bin/bash"]
