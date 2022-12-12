@@ -5,7 +5,7 @@ LABEL maintainer="m4rkus@engineers4cloud" description="docker buid image for CI-
 ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/aws/bin:/root/bin"
 ENV TZ="etc/localtime"
 RUN yum update -y \
-&& yum install -y unzip jq less groff wget \
+&& yum install -y unzip jq less groff wget which \
 && amazon-linux-extras install docker \
 && yum clean all \
 && rm -rf /var/cache/yum \
