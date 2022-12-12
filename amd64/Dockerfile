@@ -17,8 +17,9 @@ aws \
 /usr/local/aws-cli/v2/*/dist/aws_completer \
 /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
 /usr/local/aws-cli/v2/*/dist/awscli/examples \
-BUILDX_VERSION=$(curl -sL "https://api.github.com/repos/docker/buildx/releases/latest" | jq -r ".tag_name" | cut -c2-10) \
+&& BUILDX_VERSION=$(curl -sL "https://api.github.com/repos/docker/buildx/releases/latest" | jq -r ".tag_name" | cut -c2-10) \
 && echo $BUILDX_VERSION \
 && wget -q "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64" \
-&& ls -l && mv buildx-v${BUILDX_VERSION}.linux-amd64 docker-buildx && mv docker-buildx /usr/libexec/docker/cli-plugins
-#&& chmod +x /usr/libexec/docker/cli-plugins/docker-buildx
+&& mv buildx-v${BUILDX_VERSION}.linux-amd64 docker-buildx \
+&& mv docker-buildx /usr/libexec/docker/cli-plugins \
+&& chmod +x /usr/libexec/docker/cli-plugins/docker-buildx
