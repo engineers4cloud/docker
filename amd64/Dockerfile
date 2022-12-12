@@ -18,6 +18,6 @@ aws \
 /usr/local/aws-cli/v2/*/dist/awscli/data/ac.index \
 /usr/local/aws-cli/v2/*/dist/awscli/examples
 RUN BUILDX_VERSION=$(curl -sL "https://api.github.com/repos/docker/buildx/releases/latest" | jq -r ".tag_name" | cut -c2-10) \
-&& echo $BUILDX_VERSION
-#&& wget -q "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64" \
+&& echo $BUILDX_VERSION \
+&& wget -q "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64"
 #&& ls -l && which docker
