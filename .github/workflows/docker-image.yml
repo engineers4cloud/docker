@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Get actual date
+      run: echo "CUSTOM_DATE=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      id: version
+      
     - uses: actions/checkout@v3
       
     - name: Set up Docker Buildx
@@ -30,6 +34,6 @@ jobs:
         context: .
         file: ./amd64/Dockerfile
         platforms: linux/amd64
-        tags: engineers4cloud/docker:latest
+        tags: engineers4cloud/docker:${{ steps.version.outputs.CUSTOM_DATE }}
         push: true  
     
